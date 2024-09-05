@@ -6,7 +6,7 @@ import org.abhishek.deliveroo.model.CronExpressionResultBuilder;
 
 public class Main {
     public static void main(String[] args) {
-//        args = new String[]{"*/58 */2 */5 1,2,3 0-6 /usr/bin/find"};
+//        args = new String[]{"*/58 */2 */5 1,2,3 1-5 /usr/bin/find"};
         if(args.length != 1 && args[0].split(" ").length != 6) {
             throw new RuntimeException("Invalid number of arguments passed!");
         }

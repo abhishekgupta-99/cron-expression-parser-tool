@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class MultipleValuesParser extends Parser {
+public class CommaValuesParser extends Parser {
 
     private boolean isValid(int timeValue, TimeField timeField) {
         return timeValue >= timeField.getStartValue() && timeValue <= timeField.getEndValue();

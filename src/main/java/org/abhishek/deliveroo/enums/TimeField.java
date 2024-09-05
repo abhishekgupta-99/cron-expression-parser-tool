@@ -8,13 +8,13 @@ public enum TimeField {
     DAY_OF_WEEK("day of week",0,6);
 
     private String name;
-    private int startValue;
-    private int endValue;
+    private int begin;
+    private int end;
 
-    TimeField(String name, int startValue, int endValue) {
+    TimeField(String name, int begin, int end) {
         this.name = name;
-        this.startValue = startValue;
-        this.endValue = endValue;
+        this.begin = begin;
+        this.end = end;
     }
 
     public String getName() {
@@ -22,10 +22,10 @@ public enum TimeField {
     }
 
     public int getStartValue() {
-        return startValue;
+        return begin;
     }
 
     public int getEndValue() {
-        return endValue;
+        return end;
     }
 }

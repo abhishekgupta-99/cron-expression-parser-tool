@@ -5,20 +5,20 @@ import org.abhishek.deliveroo.enums.TimeField;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RangeParser extends Parser {
-    private boolean isValidRange(int startValue, int endValue, TimeField timeField) {
-        return startValue >= timeField.getStartValue() && startValue <= endValue && endValue <= timeField.getEndValue();
+public class HyphenRangeParser extends Parser {
+    private boolean isValidRange(int begin, int end, TimeField timeField) {
+        return begin >= timeField.getStartValue() && begin <= end && end <= timeField.getEndValue();
     }
     @Override
     public List<Integer> regexAndRangeValidator(TimeField timeField, String cronExpression) {
         List<Integer> result = new ArrayList<>();
         String[] rangeValues = cronExpression.split("-");
-        int startValue = Integer.parseInt(rangeValues[0]);
-        int endValue = Integer.parseInt(rangeValues[1]);
-        if(isValidRange(startValue,endValue,timeField)) {
-            while(startValue <= endValue) {
-                result.add(startValue);
-                startValue++;
+        int begin = Integer.parseInt(rangeValues[0]);
+        int end = Integer.parseInt(rangeValues[1]);
+        if(isValidRange(begin,end,timeField)) {
+            while(begin <= end) {
+                result.add(begin);
+                begin++;
             }
         }
         else{

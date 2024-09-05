@@ -1,7 +1,6 @@
 # Cron Expression Parser Tool
 The Cron Expression Parser Tool is a command-line utility designed to parse cron expressions and display the exact times at which the specified command will be executed.
 
-
 # Features
 - Simple and Intuitive: Parse standard cron expressions and output the expanded schedule in a clear format.
 - Comprehensive Support: Handles minute, hour, day of month, month, and day of week fields with various formats, including ranges, increments, wildcards, and specific values.
@@ -44,7 +43,7 @@ command       /usr/bin/find
 # Handling Edge Cases
 The Cron Expression Parser Tool has been designed to handle various edge cases:
 
-- Wildcards (*): Expands to all possible values for the corresponding field.
-- Ranges (x-y): Expands to all values within the specified range.
-- Increments (*/n): Expands to values at intervals of n within the field's range.
+- Wildcards (*): All possible values for the corresponding field.
+- Ranges (x-y): All values within the specified range.
+- Increments (*/n): All values at intervals of n within the field's range.
 - Multiple Values (x,y,z): Expands to the specified values.

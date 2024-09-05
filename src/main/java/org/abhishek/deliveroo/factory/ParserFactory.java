@@ -9,11 +9,11 @@ public class ParserFactory {
 
     public static Set<Parser> createParsers() {
         Set<Parser> parsers = new HashSet<>();
-        parsers.add(new StarParser());
-        parsers.add(new IncrementParser());
-        parsers.add(new MultipleValuesParser());
+        parsers.add(new WildStarParser());
+        parsers.add(new StepIncrementParser());
+        parsers.add(new CommaValuesParser());
         parsers.add(new NumberParser());
-        parsers.add(new RangeParser());
+        parsers.add(new HyphenRangeParser());
         return parsers;
     }
 }

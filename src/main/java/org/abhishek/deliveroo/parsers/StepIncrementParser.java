@@ -5,7 +5,7 @@ import org.abhishek.deliveroo.enums.TimeField;
 import java.util.ArrayList;
 import java.util.List;
 
-public class IncrementParser extends Parser {
+public class StepIncrementParser extends Parser {
 
     @Override
     public List<Integer> regexAndRangeValidator(TimeField timeField, String cronExpression) {
@@ -17,17 +17,17 @@ public class IncrementParser extends Parser {
         } catch(NumberFormatException ex) {
             throw new RuntimeException("Invalid " + timeField.getName()+ " interval value entered!");
         }
-        int startValue = timeField.getStartValue();
-        int endValue = timeField.getEndValue();
-        if(incrementValue < startValue) {
+        int begin = timeField.getStartValue();
+        int end = timeField.getEndValue();
+        if(incrementValue < begin) {
             throw new RuntimeException("Invalid " + timeField.getName()+ " interval value entered!");
         }
-        else if(incrementValue>endValue){
+        else if(incrementValue>end){
             throw new RuntimeException("Invalid " + timeField.getName()+ " interval value entered!");
         }
-        while (startValue <= endValue) {
-            result.add(startValue);
-            startValue += incrementValue;
+        while (begin <= end) {
+            result.add(begin);
+            begin += incrementValue;
         }
         return result;
     }

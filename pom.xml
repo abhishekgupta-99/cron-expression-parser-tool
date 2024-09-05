@@ -16,14 +16,22 @@
 
     <build>
         <plugins>
+            <!-- Compiler Plugin: Configures the Java compiler -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
                 <configuration>
-                    <source>8</source>
-                    <target>8</target>
+                    <release>20</release>
+                    <source>19</source>
+                    <target>19</target>
                 </configuration>
+<!--                <configuration>-->
+<!--                    <source>8</source>-->
+<!--                    <target>8</target>-->
+<!--                </configuration>-->
             </plugin>
+            <!-- Jar Plugin: Configures the JAR packaging and includes the main class in the manifest -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>

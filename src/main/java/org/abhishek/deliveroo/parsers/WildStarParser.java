@@ -5,16 +5,16 @@ import org.abhishek.deliveroo.enums.TimeField;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StarParser extends Parser {
+public class WildStarParser extends Parser {
     @Override
     public List<Integer> regexAndRangeValidator(TimeField timeField, String cronExpression){
         List<Integer> result = new ArrayList<>();
-        int startValue = timeField.getStartValue();
-        int endValue = timeField.getEndValue();
+        int begin = timeField.getStartValue();
+        int end = timeField.getEndValue();
 
-        while(startValue <= endValue) {
-            result.add(startValue);
-            startValue++;
+        while(begin <= end) {
+            result.add(begin);
+            begin++;
         }
         return result;
     }

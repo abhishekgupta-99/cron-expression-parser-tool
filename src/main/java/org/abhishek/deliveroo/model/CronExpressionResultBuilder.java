@@ -5,8 +5,6 @@ import org.abhishek.deliveroo.enums.TimeField;
 import java.util.List;
 import java.util.Map;
 
-import static java.lang.String.format;
-
 public class CronExpressionResultBuilder {
 
     private final Map<TimeField, List<Integer>> finalTimingsMap;
